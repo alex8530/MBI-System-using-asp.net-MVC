@@ -17,7 +17,7 @@ namespace MBI_ASP.Models
         public double Weight { get; set; }
 
 
-        [DisplayName("Height (kg)")]
+        [DisplayName("Height (cm)")]
 
         public double Height { get; set; }
 
@@ -27,9 +27,9 @@ namespace MBI_ASP.Models
         public string Gender { get; set; }
 
 
-        [NotMapped]
+    
         public double MBI { get; set; }
-        [NotMapped]
+     
         public string Classification { get; set; }
     }
 }

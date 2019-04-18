@@ -27,7 +27,9 @@ namespace MBI_ASP.Controllers
         [HttpPost]
         public ActionResult AddMBI(Entry entry)
         {
-            var _mbi_ = getMBI(entry.Weight, entry.Height);
+            var val = getMBI(entry.Weight, entry.Height);
+            var _mbi_ = Math.Round((Double)val, 2);
+
             var ent = new Entry()
             {
                 Weight=entry.Weight,
@@ -46,6 +48,8 @@ namespace MBI_ASP.Controllers
 
         public double getMBI (double w , double h)
         {
+            //first ... we need convert the height from cm to meter and put it in the same variable
+            h /= 100;
             double mbi = (w) / (h * h);
                  
             return mbi;
